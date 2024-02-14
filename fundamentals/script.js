@@ -15,7 +15,6 @@
 // true;
 // console.log(true);
 
-
 // let javascriptIsFun = true;
 // console.log(javascriptIsFun);
 
@@ -38,20 +37,38 @@
 
 // console.log(ageJonas, ageSarah);
 
-const firstName = 'Jonas';
-const job = 'techer';
+// const firstName = 'Jonas';
+// const job = 'techer';
+// const birthYear = 1991;
+// const year = 2037;
+
+// const jonas = "I'm " + firstName + ' ,a ' +  (year - birthYear) + ' year old ' + job + '!';
+// console.log(jonas);
+
+// const jonasNew = `I'm ${firstName}, a ${year - birthYear} year old teacher `;
+// console.log(jonasNew);
+
+// console.log('String with \n\n');
+// console.log(`String with
+// multiple lines`);
+
+
+const age = 15;
+const isOldenough =  age >= 18;
+
+if(age >= 18) {
+    console.log('Sarah can sart driving 🚘');
+} else {
+    const yearsLeft = 18 - age;
+    console.log(`Sarah cannot drive until ${yearsLeft} years`);
+}
+let century
+
 const birthYear = 1991;
-const year = 2037;
+if(birthYear <=2000) {
+    century = 20;
+} else {
+    century = 21;
+}
 
-const jonas = "I'm " + firstName + ' ,a ' +  (year - birthYear) + ' year old ' + job + '!';
-console.log(jonas);
-
-
-const jonasNew = `I'm ${firstName}, a ${year - birthYear} year old teacher `;
-console.log(jonasNew);
-
-console.log('String with \n\n');
-console.log(`String with
-multiple lines`);
-
-
+console.log(century);
