@@ -53,22 +53,33 @@
 // multiple lines`);
 
 
-const age = 15;
-const isOldenough =  age >= 18;
+// const age = 15;
+// const isOldenough =  age >= 18;
 
-if(age >= 18) {
-    console.log('Sarah can sart driving 🚘');
-} else {
-    const yearsLeft = 18 - age;
-    console.log(`Sarah cannot drive until ${yearsLeft} years`);
-}
-let century
+// if(age >= 18) {
+//     console.log('Sarah can sart driving 🚘');
+// } else {
+//     const yearsLeft = 18 - age;
+//     console.log(`Sarah cannot drive until ${yearsLeft} years`);
+// }
+// let century
 
-const birthYear = 1991;
-if(birthYear <=2000) {
-    century = 20;
-} else {
-    century = 21;
-}
+// const birthYear = 1991;
+// if(birthYear <=2000) {
+//     century = 20;
+// } else {
+//     century = 21;
+// }
 
-console.log(century);
+// console.log(century);
+
+const inputYear = '1991';
+console.log(Number(inputYear), inputYear);
+console.log(inputYear + 18);
+
+
+console.log('I am ' + 23 );
+
+let n = '1' + 1;
+n = n -1;
+console.log(n);
