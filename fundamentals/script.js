@@ -73,13 +73,156 @@
 
 // console.log(century);
 
-const inputYear = '1991';
-console.log(Number(inputYear), inputYear);
-console.log(inputYear + 18);
+// const inputYear = '1991';
+// console.log(Number(inputYear), inputYear);
+// console.log(inputYear + 18);
 
 
-console.log('I am ' + 23 );
+// console.log('I am ' + 23 );
 
-let n = '1' + 1;
-n = n -1;
-console.log(n);
+// let n = '1' + 1;
+// n = n -1;
+// console.log(n);
+
+// console.log(me);
+
+// var me = "Gagan";
+// //let job = "Programmer";
+// //const year = 1994;
+
+// // Functions
+
+// console.log(addDecl(2,3));
+// console.log(addExpr(2,3));
+// console.log(addArrow(2,3));
+
+// function addDecl(a,b) {
+//     return a + b;
+// }
+
+// const addExpr = function (a,b) {
+
+//     return a + b;
+    
+// }
+
+// const addArrow = (a,b) => a+ b;
+
+//Example
+// console.log(undefined);
+// if(!numProducts) deleteShoppingCart();
+
+// var numProducts = 10;
+
+// function deleteShoppingCart() {
+//     console.log('All products deleted ');
+// }
+
+// 'use strict';
+
+// console.log(this);
+
+// const calcAge = function (birthYear) {
+//     console.log(2037 - birthYear);
+//     console.log(this);
+    
+// }
+
+// calcAge(1991)
+
+// var firstName = "Gagan";
+
+// const Gagan = {
+//     year: 1991,
+//     firstName: 'Gagan',
+//     calcAge : function(){
+//         console.log(this);
+//         console.log(2037 - this.year);
+
+//         const isMillenial = function() {
+//             console.log(this.year >=1991 && this.year <=1996);
+//         }
+
+//         isMillenial();
+//     },
+
+//     greet: ()=> console.log(`Hey ${this.firstName}`)
+// }
+
+// Gagan.greet();
+// Gagan.calcAge();
+
+
+// const addExpr= 
+
+
+// let age = 30;
+
+// let oldage = age;
+
+// age = 31;
+
+// console.log(age, oldage);
+
+'use strict';
+
+// Data needed for a later exercise
+const flights =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+// Data needed for first part of the section
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
+
+  order : function(starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]]
+  }
+};
+
+const arr = [2,3,5];
+const a = arr[0];
+const b = arr[0];
+const c = arr[0];
+
+
+const [x,y,z] = arr;
+console.log(x,y,z);
+
+let [main, ,secondary] = restaurant.categories;
+console.log(main, secondary);
+
+
+[main, secondary] = [secondary, main] 
+console.log(main, secondary);
+
+
+const [starter, mainCourse] = restaurant.order(2,0);
+console.log(starter, mainCourse);
+
+const nested = [2,4, [5,6]];
+const [i,,[j,k]] = nested
+console.log(i,j,k);
+
+
+// Default values
+ const [ p,q,r=1] = [8,9];
+ console.log(p,q,r);
