@@ -195,34 +195,125 @@ const restaurant = {
 
   order : function(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]]
+  },
+
+  orderDelivery: function({StarterIndex, mainIndex, time, address}) {
+    console.log(StarterIndex, mainIndex, time, address );
+    console.log(`Order received ${this.starterMenu}`);
+  },
+
+  orderPasta: (ing1, ing2, ing3)=> {
+    console.log(`${ing1} ${ing2} ${ing3}`);
+    
   }
 };
 
-const arr = [2,3,5];
-const a = arr[0];
-const b = arr[0];
-const c = arr[0];
+restaurant.orderDelivery({
+    time: '22:33',
+    address: 'Via',
+    mainIndex: 2,
+    StarterIndex: 3
+})
 
 
-const [x,y,z] = arr;
-console.log(x,y,z);
+const arr = [7,8,9];
 
-let [main, ,secondary] = restaurant.categories;
-console.log(main, secondary);
+const badNewArr = [1,2,arr[0], arr[1], arr[2]];
+console.log(badNewArr);
+
+const newArr = [1,2,...arr];
+console.log(newArr);
+
+const newMenu = [...restaurant.mainMenu, 'Ginocci'];
+console.log(newMenu);
+
+//Copy
+const mainMenuCopy = [...restaurant.mainMenu];
+console.log(mainMenuCopy);
+
+// Join 2 arrays
+const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(menu);
+
+// Iterables are arrays, strings, maps, sets but not objects
+
+const str = "Jonas";
+
+const letters = [...str, ' ', 's'];
+console.log(letters);
+
+console.log(...str);
 
 
-[main, secondary] = [secondary, main] 
-console.log(main, secondary);
+// const ingredients = [prompt('Let\'s make pasta! Ingedient 1 ?'), prompt('Ingredient 2'), prompt('Ingredient 3')];
+
+// console.log(ingredients);
+
+//  restaurant.orderPasta()
 
 
-const [starter, mainCourse] = restaurant.order(2,0);
-console.log(starter, mainCourse);
+ // Objects
 
-const nested = [2,4, [5,6]];
-const [i,,[j,k]] = nested
-console.log(i,j,k);
+ const newRestaurant = {...restaurant, founder: 'Gzep'}
+ console.log(newRestaurant);
+
+ const restaurantCopy = {...restaurant};
+ restaurantCopy.name = 'rrrrr'
+//console.log(`${...str}`);
 
 
-// Default values
- const [ p,q,r=1] = [8,9];
- console.log(p,q,r);
+
+
+
+// const {name1, openingHours, categories}  = restaurant 
+// //console.log(name1, openingHours, categories);
+
+// const {name: restaurantName, openingHours: hours, categories: tags} = restaurant;
+//console.log(restaurantName, tags, hours);
+
+// const {menu= [], starterMenu: starters = []} = restaurant;
+// console.log(menu, starters);
+
+// Mutating variables
+
+// let a = 111;
+// let b= 999;
+
+// const obj = {a:23, b:27};
+
+// {a,b}  = obj;
+// console.log(a,b);
+
+// // nested objects
+
+//  const {fri: {open: o, close:c}} = openingHours;
+//  console.log(o, c);
+
+// const arr = [2,3,5];
+// const a = arr[0];
+// const b = arr[0];
+// const c = arr[0];
+
+
+// const [x,y,z] = arr;
+// console.log(x,y,z);
+
+// let [main, ,secondary] = restaurant.categories;
+// console.log(main, secondary);
+
+
+// [main, secondary] = [secondary, main] 
+// console.log(main, secondary);
+
+
+// const [starter, mainCourse] = restaurant.order(2,0);
+// console.log(starter, mainCourse);
+
+// const nested = [2,4, [5,6]];
+// const [i,,[j,k]] = nested
+// console.log(i,j,k);
+
+
+// // Default values
+//  const [ p,q,r=1] = [8,9];
+//  console.log(p,q,r);
