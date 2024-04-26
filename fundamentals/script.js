@@ -205,6 +205,10 @@ const restaurant = {
   orderPasta: (ing1, ing2, ing3)=> {
     console.log(`${ing1} ${ing2} ${ing3}`);
     
+  },
+
+  orderPizza : ()=> {
+    
   }
 };
 
@@ -216,33 +220,33 @@ restaurant.orderDelivery({
 })
 
 
-const arr = [7,8,9];
+// const arr = [7,8,9];
 
-const badNewArr = [1,2,arr[0], arr[1], arr[2]];
-console.log(badNewArr);
+// const badNewArr = [1,2,arr[0], arr[1], arr[2]];
+// console.log(badNewArr);
 
-const newArr = [1,2,...arr];
-console.log(newArr);
+// const newArr = [1,2,...arr];
+// console.log(newArr);
 
-const newMenu = [...restaurant.mainMenu, 'Ginocci'];
-console.log(newMenu);
+// const newMenu = [...restaurant.mainMenu, 'Ginocci'];
+// console.log(newMenu);
 
-//Copy
-const mainMenuCopy = [...restaurant.mainMenu];
-console.log(mainMenuCopy);
+// //Copy
+// const mainMenuCopy = [...restaurant.mainMenu];
+// console.log(mainMenuCopy);
 
-// Join 2 arrays
-const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
-console.log(menu);
+// // Join 2 arrays
+// const menu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(menu);
 
-// Iterables are arrays, strings, maps, sets but not objects
+// // Iterables are arrays, strings, maps, sets but not objects
 
-const str = "Jonas";
+// const str = "Jonas";
 
-const letters = [...str, ' ', 's'];
-console.log(letters);
+// const letters = [...str, ' ', 's'];
+// console.log(letters);
 
-console.log(...str);
+// console.log(...str);
 
 
 // const ingredients = [prompt('Let\'s make pasta! Ingedient 1 ?'), prompt('Ingredient 2'), prompt('Ingredient 3')];
@@ -254,12 +258,12 @@ console.log(...str);
 
  // Objects
 
- const newRestaurant = {...restaurant, founder: 'Gzep'}
- console.log(newRestaurant);
+//  const newRestaurant = {...restaurant, founder: 'Gzep'}
+//  console.log(newRestaurant);
 
- const restaurantCopy = {...restaurant};
- restaurantCopy.name = 'rrrrr'
-//console.log(`${...str}`);
+//  const restaurantCopy = {...restaurant};
+//  restaurantCopy.name = 'rrrrr'
+// //console.log(`${...str}`);
 
 
 
@@ -317,3 +321,31 @@ console.log(...str);
 // // Default values
 //  const [ p,q,r=1] = [8,9];
 //  console.log(p,q,r);
+
+const [a,b, ...others] = [1,2,3,4,5];
+console.log(a,b, others);
+
+const [pizza, ,risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(pizza, risotto, otherFood);
+
+//Objects
+const {sat, ...weekdays} = restaurant.openingHours;
+console.log(weekdays);
+
+// 2 Functions
+const add = function(...numbers) {
+  console.log(numbers);
+  let sum = 0;
+  for(let i=0; i< numbers.length; i++) {
+    sum += numbers[i];
+  }
+  console.log(sum);
+}
+
+add(2,3);
+add(1,3,4,5,5,55,5);
+add(9,2,3,4,5);
+
+const x = [23,5,7];
+add(...x);
+console.log();
