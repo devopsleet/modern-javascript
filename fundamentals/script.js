@@ -166,6 +166,24 @@
 
 'use strict';
 
+const weekdays = ['mon', 'tue', 'wed', 'thu', 'fri']
+
+const openingHours = 
+{
+  [weekdays[3]]: {
+    open: 12,
+    close: 22,
+  },
+  [weekdays[4]]: {
+    open: 11,
+    close: 23,
+  },
+  ['']: {
+    open: 0, // Open 24 hours
+    close: 24,
+  },
+}
+
 // Data needed for a later exercise
 const flights =
   '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
@@ -178,37 +196,43 @@ const restaurant = {
   starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
   mainMenu: ['Pizza', 'Pasta', 'Risotto'],
 
-  openingHours: {
-    thu: {
-      open: 12,
-      close: 22,
-    },
-    fri: {
-      open: 11,
-      close: 23,
-    },
-    sat: {
-      open: 0, // Open 24 hours
-      close: 24,
-    },
-  },
+  //openingHours: openingHours,
 
-  order : function(starterIndex, mainIndex) {
+  // Enhanced Object Literal
+  openingHours,
+  // openingHours: {
+  //   thu: {
+  //     open: 12,
+  //     close: 22,
+  //   },
+  //   fri: {
+  //     open: 11,
+  //     close: 23,
+  //   },
+  //   sat: {
+  //     open: 0, // Open 24 hours
+  //     close: 24,
+  //   },
+  // },
+
+  order(starterIndex, mainIndex) {
     return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]]
   },
 
-  orderDelivery: function({StarterIndex, mainIndex, time, address}) {
+
+
+  orderDelivery({StarterIndex, mainIndex, time, address}) {
     console.log(StarterIndex, mainIndex, time, address );
     console.log(`Order received ${this.starterMenu}`);
   },
 
-  orderPasta: (ing1, ing2, ing3)=> {
+  orderPasta:(ing1, ing2, ing3)=> {
     console.log(`${ing1} ${ing2} ${ing3}`);
     
   },
 
-  orderPizza : ()=> {
-    
+  orderPizza:(ing1)=> { console.log(`${ing1}`);
+
   }
 };
 
@@ -219,6 +243,7 @@ restaurant.orderDelivery({
     StarterIndex: 3
 })
 
+console.log(restaurant);
 
 // const arr = [7,8,9];
 
@@ -322,30 +347,197 @@ restaurant.orderDelivery({
 //  const [ p,q,r=1] = [8,9];
 //  console.log(p,q,r);
 
-const [a,b, ...others] = [1,2,3,4,5];
-console.log(a,b, others);
+// const [a,b, ...others] = [1,2,3,4,5];
+// console.log(a,b, others);
 
-const [pizza, ,risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
-console.log(pizza, risotto, otherFood);
+// const [pizza, ,risotto, ...otherFood] = [...restaurant.mainMenu, ...restaurant.starterMenu];
+// console.log(pizza, risotto, otherFood);
 
-//Objects
-const {sat, ...weekdays} = restaurant.openingHours;
-console.log(weekdays);
+// //Objects
+// const {sat, ...weekdays} = restaurant.openingHours;
+// console.log(weekdays);
 
-// 2 Functions
-const add = function(...numbers) {
-  console.log(numbers);
-  let sum = 0;
-  for(let i=0; i< numbers.length; i++) {
-    sum += numbers[i];
-  }
-  console.log(sum);
+// // 2 Functions
+// const add = function(...numbers) {
+//   console.log(numbers);
+//   let sum = 0;
+//   for(let i=0; i< numbers.length; i++) {
+//     sum += numbers[i];
+//   }
+//   console.log(sum);
+// }
+
+// add(2,3);
+// add(1,3,4,5,5,55,5);
+// add(9,2,3,4,5);
+
+// const x = [23,5,7];
+// add(...x);
+// console.log();
+
+// console.log(3 || 'Jonas');
+
+// // const [m,n] = [1,2];
+
+// // [n,m] = [m,n]
+// // console.log(a,b);
+
+// const rest1 = {
+//   name: 'Capri',
+//   //numGuests: 20,
+//   numGuests: 0
+
+// }
+
+// const rest2 = {
+//   name : 'La Piazza',
+//   owner: 'Giovanni ROSSI',
+// }
+
+// rest2.numGuests = rest1.numGuests ?? 10;
+
+// rest2.owner = rest2.owner && 'Anonymous'
+// rest1.numGuests ??= 10;
+// console.log(rest1);
+// console.log(rest2);
+
+// for of loop
+
+// const menu = [ ...restaurant.starterMenu, ...restaurant.mainMenu];
+
+// for(const item of menu){
+//   console.log(item);
+// }
+
+// for(const item of menu.entries()) {
+//   console.log(item);
+// }
+
+
+// console.log([...menu.entries()]);
+
+
+// for(const [i,el] of menu.entries()) {
+//   console.log(`${i+1}: ${el}`);
+// }
+
+// const properties = Object.keys(openingHours)
+
+// let openStr = `We are open on ${properties.length} days`;
+
+// for (const day of Object.keys(openingHours)) {
+//   console.log(day);
+// }
+
+// // Property Values
+
+// const values = Object.values(openingHours);
+
+// //Entries object
+// Object.entries(openingHours);
+
+// const properties = Object.keys(openingHours);
+// console.log(properties);
+
+// console.log(`We are open on ${properties.length}`);
+
+// for (const day of Object.keys(openingHours)) {
+//   console.log(day);
+// }
+
+// const values = Object.values(openingHours);
+// console.log(values);
+
+// // Entire Object
+// const entries = Object.entries(openingHours);
+// // console.log(entries);
+
+// for (const [key, {open,close}] of entries){
+//   console.log(`On ${key} we open at ${open} and close at ${close} `);
+// }
+
+///////////////////////////////////////
+// Coding Challenge #2
+
+/* 
+Let's continue with our football betting app!
+
+1. Loop over the game.scored array and print each player name to the console, along with the goal number (Example: "Goal 1: Lewandowski")
+2. Use a loop to calculate the average odd and log it to the console (We already studied how to calculate averages, you can go check if you don't remember)
+3. Print the 3 odds to the console, but in a nice formatted way, exaclty like this:
+      Odd of victory Bayern Munich: 1.33
+      Odd of draw: 3.25
+      Odd of victory Borrussia Dortmund: 6.5
+Get the team names directly from the game object, don't hardcode them (except for "draw"). HINT: Note how the odds and the game objects have the same property names 😉
+
+BONUS: Create an object called 'scorers' which contains the names of the players who scored as properties, and the number of goals as the value. In this game, it will look like this:
+      {
+        Gnarby: 1,
+        Hummels: 1,
+        Lewandowski: 2
+      }
+
+GOOD LUCK 😀
+*/
+
+const game = {
+  team1: 'Bayern Munich',
+  team2: 'Borrussia Dortmund',
+  players: [
+    [
+      'Neuer',
+      'Pavard',
+      'Martinez',
+      'Alaba',
+      'Davies',
+      'Kimmich',
+      'Goretzka',
+      'Coman',
+      'Muller',
+      'Gnarby',
+      'Lewandowski',
+    ],
+    [
+      'Burki',
+      'Schulz',
+      'Hummels',
+      'Akanji',
+      'Hakimi',
+      'Weigl',
+      'Witsel',
+      'Hazard',
+      'Brandt',
+      'Sancho',
+      'Gotze',
+    ],
+  ],
+  score: '4:0',
+  scored: ['Lewandowski', 'Gnarby', 'Lewandowski', 'Hummels'],
+  date: 'Nov 9th, 2037',
+  odds: {
+    team1: 1.33,
+    x: 3.25,
+    team2: 6.5,
+  },
+};
+
+for (const [i, value] of game.scored.entries())
+{
+  console.log(`Goal ${i+1}: ${value}`);
 }
 
-add(2,3);
-add(1,3,4,5,5,55,5);
-add(9,2,3,4,5);
+const odds = Object.values(game.odds);
+let average = 0;
+for (const odd of odds) average += odd;
+console.log(average);
+average = average/odds.length;
+console.log(average);
 
-const x = [23,5,7];
-add(...x);
-console.log();
+// for (const [i,value] of game.odds) {
+//   console.log(`Odds of ${game[i]}: ${value}`);
+// }
+
+for (const [team, odd] of Object.entries(game.odds)) {
+  const teamStr = team === 'x' ? 'draw' : `victory ${game[team]}`;
+  console.log(`Odd of ${teamStr}: ${odd}`);
+}
