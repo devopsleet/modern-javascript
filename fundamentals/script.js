@@ -1,65 +1,140 @@
-console.log(23);
+// console.log(23);
 
-// let firstName = "Jonas"
+// // let firstName = "Jonas"
 
+// let boolean = true
 
-let boolean = true
+// console.log(boolean);
 
-console.log(boolean);
+// // Variable name conventions
 
-// Variable name conventions
+// console.log(true)
 
-console.log(true)
+// let javascriptISFun = true;
 
-let javascriptISFun = true;
+// console.log(javascriptISFun);
 
-console.log(javascriptISFun);
+// console.log(typeof true);
+// console.log(typeof 23);
+// //console.log(typeof firstName);
 
-console.log(typeof true);
-console.log(typeof 23);
-//console.log(typeof firstName);
+// javascriptISFun = 'YES!'
 
-javascriptISFun = 'YES!'
+// console.log(javascriptISFun);
 
-console.log(javascriptISFun);
+// let year;
 
-let year;
+// console.log(year);
+// console.log(typeof year);
 
-console.log(year);
-console.log(typeof year);
+// year = 1991;
+// console.log(typeof year);
 
-year = 1991;
-console.log(typeof year);
+// console.log(typeof null);
 
+// let age = 30
 
-console.log(typeof null);
+// age = 122
 
-let age = 30
+// console.log(age);
 
-age = 122
+// const birthYear = 1991;
+// // birthYear = 2002
 
-console.log(age);
+// // console.log(birthYear);
+
+// const job = 23;
+
+// const ageJonas = 2037 - 1991;
+// const ageSarah = 2037 - 2018;
+// console.log(ageSarah);
+// console.log(ageJonas);
+
+// console.log(ageJonas * 2., ageJonas / 10, 2 ** 3);
+
+// const firstName = 'Jonas';
+// const lastName = "Singla"
+
+// console.log(firstName + ' ' + lastName);
+
+// // let x= 10 + 5;
+// // x += 10;
+// // console.log(x);
+
+// console.log(ageSarah >= ageJonas);
+
+// const isFullAge = ageSarah>= 18;
+
+// // console.log(now );
+// console.log(25 - 10 - 5);
+
+// let x,y;
+
+// x = y = 25 - 10 - 5;
+
+// console.log(x, y);
+
+const first = "Gagan";
+const job = "Programmer";
+const birthyear = 1991;
+const year = 2037;
+
+const jonas = "I'm " + first + " " + ",a " + (year - birthyear) + " years old";
+console.log(jonas);
+
+const jonasNew = `I'm ${first}, a ${
+  year - birthyear
+} years old and I'm a ${job}`;
+console.log(jonasNew);
+
+console.log(`Just a regular string without any back ticks....`);
+
+console.log(`Strings
+multiple
+lines
+`);
+
+const age = 9;
+
+const isOldEnough = age >= 18;
+
+if (isOldEnough) {
+  console.log("Sarah can start driving license");
+} else {
+  const yearsLeft = 18 - age;
+
+  console.log(
+    `Sarah cannot drive becase she still has ${yearsLeft} years left`
+  );
+}
 
 const birthYear = 1991;
-// birthYear = 2002
+let century;
 
-// console.log(birthYear);
+if (birthyear <= 2000) {
+  century = 20;
+} else {
+  century = 21;
+}
 
-const job = 23;
-
-const ageJonas = 2037 - 1991;
-const ageSarah = 2037 - 2018;
-console.log(ageSarah);
-console.log(ageJonas);
+console.log(century);
 
 
-console.log(ageJonas * 2., ageJonas / 10, 2 ** 3);
+const inputYear = '1991';
+console.log(Number(inputYear) + 18);
+console.log(inputYear + 18);
 
-const firstName = 'Jonas';
-const lastName = "Singla"
+console.log(Number('Jonas'));
+console.log(typeof(NaN));
 
-console.log(firstName + ' ' + lastName);
+console.log(String(23), 23);
 
-let x= 10 + 5;
-x += 10;
-console.log(x);
+//type coercion
+console.log('I am' + 23 + ' years old');
+console.log('23' - '10' - 3);
+
+let n = '1' + 1;
+n = n - 1
+console.log(n);
+
+console.log(Boolean(0));
