@@ -94,19 +94,19 @@ multiple
 lines
 `);
 
-const age = 9;
+// const newage = 9;
 
-const isOldEnough = age >= 18;
+// const isOldEnough = age >= 18;
 
-if (isOldEnough) {
-  console.log("Sarah can start driving license");
-} else {
-  const yearsLeft = 18 - age;
+// if (isOldEnough) {
+//   console.log("Sarah can start driving license");
+// } else {
+//   const yearsLeft = 18 - age;
 
-  console.log(
-    `Sarah cannot drive becase she still has ${yearsLeft} years left`
-  );
-}
+//   console.log(
+//     `Sarah cannot drive becase she still has ${yearsLeft} years left`
+//   );
+// }
 
 const birthYear = 1991;
 let century;
@@ -137,4 +137,33 @@ let n = '1' + 1;
 n = n - 1
 console.log(n);
 
-console.log(Boolean(0));
+console.log(Boolean(undefined));
+console.log(Boolean({}));
+
+const money = 100;
+
+if (money) {
+  console.log("Don't spend it all");
+} else {
+  console.log('You should get a Job');
+}
+
+let height = 0;
+
+if(height) {
+  console.log('Height is defined');
+} else {
+  console.log('height is undefined');
+}
+
+const age = 18;
+if(age === 18) {
+  console.log('You just became an adult');
+}
+
+if (age == 18) console.log('Loosely equalled');
+
+if (age != 20) console.log('It is tightly coupled');
+
+
+
