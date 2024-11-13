@@ -119,22 +119,21 @@ if (birthyear <= 2000) {
 
 console.log(century);
 
-
-const inputYear = '1991';
+const inputYear = "1991";
 console.log(Number(inputYear) + 18);
 console.log(inputYear + 18);
 
-console.log(Number('Jonas'));
-console.log(typeof(NaN));
+console.log(Number("Jonas"));
+console.log(typeof NaN);
 
 console.log(String(23), 23);
 
 //type coercion
-console.log('I am' + 23 + ' years old');
-console.log('23' - '10' - 3);
+console.log("I am" + 23 + " years old");
+console.log("23" - "10" - 3);
 
-let n = '1' + 1;
-n = n - 1
+let n = "1" + 1;
+n = n - 1;
 console.log(n);
 
 console.log(Boolean(undefined));
@@ -145,25 +144,63 @@ const money = 100;
 if (money) {
   console.log("Don't spend it all");
 } else {
-  console.log('You should get a Job');
+  console.log("You should get a Job");
 }
 
 let height = 0;
 
-if(height) {
-  console.log('Height is defined');
+if (height) {
+  console.log("Height is defined");
 } else {
-  console.log('height is undefined');
+  console.log("height is undefined");
 }
 
 const age = 18;
-if(age === 18) {
-  console.log('You just became an adult');
+if (age === 18) {
+  console.log("You just became an adult");
 }
 
-if (age == 18) console.log('Loosely equalled');
+if (age == 18) console.log("Loosely equalled");
 
-if (age != 20) console.log('It is tightly coupled');
+if (age != 20) console.log("It is tightly coupled");
+
+//const favorite = prompt('Whats your favorite number?')
+
+const hasDriversLicense = true;
+
+const hasgoodvision = true;
+
+console.log(hasDriversLicense && hasgoodvision);
+
+const day = "thursday";
+
+switch (day) {
+  case "monday": // day === 'monday'
+    console.log("MONDAy");
+    console.log("Go to coding meetup");
+    break;
+
+  case "tuesday":
+    console.log("Prtepare theory videos");
+    break;
+  case "wedneday":
+    console.log("Wed");
+  case "thursday":
+    console.log("Thurs");
+    break;
+  case "friday":
+  case "saturday":
+  case "sunday":
+    console.log(`It's Sunday`);
+}
 
 
+const me = 'Gagan';
+const myAge = 31;
 
+// Statement
+console.log(`hello! My name is ${me} and I'm ${myAge} years old`);
+
+const $$age = 23;
+
+age >= 18 ? console.log('I like to drink wine  🍷') : console.log('I like to drink water');
