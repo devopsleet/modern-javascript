@@ -97,3 +97,23 @@ const firstName = 'Gagan';
 const jonas = [firstName, 'Singla', 2037 - 1991, friends]
 console.log(jonas);
 
+const newLength = friends.push('gagan')
+console.log(newLength);
+
+console.log(friends);
+
+
+friends.unshift('John')
+console.log(friends);
+
+// remove
+
+friends.pop();
+console.log(friends);
+
+console.log(friends.indexOf('Steven'));
+friends.push('Peter')
+if (friends.includes('Peter')) {
+  console.log(`You have a friend`);
+}
+
