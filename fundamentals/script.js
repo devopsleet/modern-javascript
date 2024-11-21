@@ -15,6 +15,15 @@ const jonas = {
 
 console.log(`${jonas.firstName} is ${jonas.age} years old and he ${jonas.hasDriversLicense ? 'has a' : 'no'} driver's license`);
 
+// for loop keeps runnning while condition is TRUE
+
+for(let rep = 1; rep <= 10; rep++) {
+  console.log(`Lifting weights repetition`);
+}
+
+for(let i = 0; i < 10; i++) {
+  console.log('i');
+}
 // console.log(jonas.calcAge(1991));
 
 
