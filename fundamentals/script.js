@@ -1,119 +1,35 @@
-'use strict';
+const jonas = {
+  firstName : "Jonas",
+  lastName : "Singla",
+  age : 2037 - 1991,
+  job : 'teacher',
+  friends : ['Michael', 'Peter', 'Steven'],
+  hasDriversLicense : false,
+  birthYear: 1998,
+  calcAge: function() {
+    console.log(this);
+    return 2037 - this.birthYear;
+  }
 
-let hasDriversLicense = false;
+};
 
-const passTest = true;
+console.log(`${jonas.firstName} is ${jonas.age} years old and he ${jonas.hasDriversLicense ? 'has a' : 'no'} driver's license`);
 
-if (passTest) {
-  hasDriversLicense = true;
-}
-
-if (hasDriversLicense) console.log('Has drivers license');
-
-
-// const interface = "Audio";
-
-// const private = 534;
-
-function logger() {
-  console.log('My name is Jonas');
-}
-
-// calling / running /invoking function
-logger();
-logger();
-logger();
-
-function fruitProcessor(apples, oranges) {
-  console.log(apples, oranges);
-  const juice = `Juice with ${apples} appleas and ${oranges} oranges`;
-  return juice;
-}
+// console.log(jonas.calcAge(1991));
 
 
-const ans = fruitProcessor(2,3);
-console.log(ans);
-console.log();
+// console.log(jonas.lastName);
+// console.log(jonas['lastName']);
 
-console.log(Number('23'));
-console.log('23');
+// const nameKey = 'Name';
 
+// console.log(jonas['first' + nameKey]);
 
-function calcAge1(birthYear) {
-  const age = 2037 - birthYear;
+// // const interestedIn = prompt('What do you wnt to know about Jonas?')
+// // console.log(jonas[interestedIn]);
 
-  return age;
+// // if(jonas[interestedIn]) {
+// //   console.log(jonas[interestedIn]);
+// // }
 
-
-}
-
-const age1 = calcAge1(1991);
-
-// anonymous function
-// function expression
-const calcAge2 = function(birthYear) {
-  return 2037 - birthYear
-}
-
-const age2 = calcAge2(2037);
-
-console.log(age2);
-
-// Arrow functions
-// Function expression
-const calcAge3 = birthYear => 2037 - birthYear;
-
-const yearsUntilretiremenet = (birthYear, firstName) => {
-  const age = 2037 - birthYear;
-  const retirement = 65 - age;
-  return `${firstName} retirement`;
-}
-
-console.log( yearsUntilretiremenet(1991, 'Gagan'));
-console.log(yearsUntilretiremenet(2012, "abc"));
-
-
-// Arrays
-const friend1 = 'Michael1';
-const friend2 = "Steven";
-const friend3 = "Peter";
-
-const friends = ['Michael', 'Steven', 'Peter'];
-console.log(friends);
-
-const years = new Array(1991, 1984, 2020);
-
-console.log(friends[1]);
-console.log(friends[2]);
-
-console.log(friends.length);
-console.log(friends[friends.length - 1]);
-
-friends[2] = 'Jay';
-console.log(friends);
-
-const firstName = 'Gagan';
-
-const jonas = [firstName, 'Singla', 2037 - 1991, friends]
-console.log(jonas);
-
-const newLength = friends.push('gagan')
-console.log(newLength);
-
-console.log(friends);
-
-
-friends.unshift('John')
-console.log(friends);
-
-// remove
-
-friends.pop();
-console.log(friends);
-
-console.log(friends.indexOf('Steven'));
-friends.push('Peter')
-if (friends.includes('Peter')) {
-  console.log(`You have a friend`);
-}
-
+// console.log(`${jonas.firstName} has ${jonas.friends.length} friends, and his best friend is ${jonas.friends[0]}`);
