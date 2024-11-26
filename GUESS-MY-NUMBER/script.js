@@ -2,13 +2,13 @@
 
 
 function calcAge(birthyear) {
-  const age = 2037 - birthyear;
+  // const age = 2037 - birthyear;
   console.log(firstName);
 
   function printAge() {
     const output = `You are ${age}, born in ${birthyear} `;
     console.log(output);
-
+    var age = 2037 - birthyear;
     if(birthyear >= 1981 && birthyear <= 1996) {
       var millenial = true;
       const str = `Oh, you are a millenial, ${firstName}`;
