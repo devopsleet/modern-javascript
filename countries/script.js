@@ -21,40 +21,56 @@ const renderCountry = (data, className='') => {
   countriesContainer.insertAdjacentHTML('beforeend', html);
 };
 
-const getCountry = country => {
-  const request = new XMLHttpRequest();
-  request.open(
-    'GET',
-    `https://countries-api-836d.onrender.com/countries/name/${country}`
-  );
-  request.send();
+// const getCountry = country => {
+//   const request = new XMLHttpRequest();
+//   request.open(
+//     'GET',
+//     `https://countries-api-836d.onrender.com/countries/name/${country}`
+//   );
+//   request.send();
 
-  request.addEventListener('load', function (params) {
-    console.log(this.responseText);
+//   request.addEventListener('load', function (params) {
+//     console.log(this.responseText);
 
-    const [data] = JSON.parse(this.responseText);
-    console.log(data);
-    renderCountry(data)
+//     const [data] = JSON.parse(this.responseText);
+//     console.log(data);
+//     renderCountry(data)
 
-    // Get neigbor country
-    const [neighbors] = data.borders;
+//     // Get neigbor country
+//     const [neighbors] = data.borders;
 
-    const request2 = new XMLHttpRequest();
-  request2.open(
-    'GET',
-    `https://countries-api-836d.onrender.com/countries/alpha/${neighbors}`
-  );
-  request2.send();
+//     const request2 = new XMLHttpRequest();
+//   request2.open(
+//     'GET',
+//     `https://countries-api-836d.onrender.com/countries/alpha/${neighbors}`
+//   );
+//   request2.send();
 
-  request2.addEventListener('load', function() {
-    const data2 = JSON.parse(this.responseText);
-    console.log(data2);
+//   request2.addEventListener('load', function() {
+//     const data2 = JSON.parse(this.responseText);
+//     console.log(data2);
 
-    renderCountry(data2, 'neighbour')
-  })
+//     renderCountry(data2, 'neighbour')
+//   })
   
-  });
+//   });
+// };
+
+// getCountry('Italy');
+
+const getCountryData = function(country){
+fetch(`https://countries-api-836d.onrender.com/countries/name/${country}`)
+.then(res => res.json())
+.then(data => {
+    renderCountry(data[0]);
+    const neighbour = data[0].borders[0];
+
+    return fetch(`https://countries-api-836d.onrender.com/countries/alpha/${neighbour}`)
+})
+    .then(res2 => res2.json())
+    .then(data2 => renderCountry(data2, 'neighbour'))
+
 };
 
-getCountry('Italy');
+getCountryData('usa')
 
