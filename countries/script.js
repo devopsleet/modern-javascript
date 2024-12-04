@@ -69,8 +69,13 @@ fetch(`https://countries-api-836d.onrender.com/countries/name/${country}`)
 })
     .then(res2 => res2.json())
     .then(data2 => renderCountry(data2, 'neighbour'))
+    .catch(err => alert(err))
 
 };
 
-getCountryData('usa')
+
+btn.addEventListener('click', () => {
+  getCountryData('usa');
+})
+
 
