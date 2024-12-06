@@ -58,24 +58,48 @@ const renderCountry = (data, className='') => {
 
 // getCountry('Italy');
 
-const getCountryData = function(country){
-fetch(`https://countries-api-836d.onrender.com/countries/name/${country}`)
-.then(res => res.json())
-.then(data => {
-    renderCountry(data[0]);
-    const neighbour = data[0].borders[0];
+// const getCountryData = function(country){
+// fetch(`https://countries-api-836d.onrender.com/countries/name/${country}`)
+// .then(res => {
+//   console.log(res.json);
+// //return res.json()
+// })
+// .then(data => {
+//     renderCountry(data[0]);
+//     const neighbour = data[0].borders[0];
 
-    return fetch(`https://countries-api-836d.onrender.com/countries/alpha/${neighbour}`)
-})
-    .then(res2 => res2.json())
-    .then(data2 => renderCountry(data2, 'neighbour'))
-    .catch(err => alert(err))
+//     return fetch(`https://countries-api-836d.onrender.com/countries/alpha/${neighbour}`)
+// })
+//     .then(res2 => res2.json())
+//     .then(data2 => renderCountry(data2, 'neighbour'))
+//     .catch(err => alert(err))
 
-};
-
-
-btn.addEventListener('click', () => {
-  getCountryData('usa');
-})
+// };
 
 
+// btn.addEventListener('click', () => {
+//   getCountryData('usa');
+// })
+
+
+// // Promise.resolve({"message":"Gagan is good"}).then(response => console.log(response.json));
+
+// NavigationPreloadManager.getCountryData
+
+(async (name = prompt('Enter Country name')) => {
+  //const countryName = name;
+  const response = await fetch(`https://countries-api-836d.onrender.com/countries/name/${name}`)
+  console.log(response);
+  console.log(response.ok);
+
+  try {
+    
+    const data = await response.json()
+    console.log(data[1].population);
+
+  }catch(error){
+    console.error(error)
+  }
+})()
+
+//getCountryData('portugal', `https://countries-api-836d.onrender.com/countries/name/portugal`)
