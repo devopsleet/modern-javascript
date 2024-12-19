@@ -52,7 +52,7 @@
 
 // //     renderCountry(data2, 'neighbour')
 // //   })
-  
+
 // //   });
 // // };
 
@@ -76,11 +76,9 @@
 
 // // };
 
-
 // // btn.addEventListener('click', () => {
 // //   getCountryData('usa');
 // // })
-
 
 // // // Promise.resolve({"message":"Gagan is good"}).then(response => console.log(response.json));
 
@@ -93,7 +91,7 @@
 //   console.log(response.ok);
 
 //   try {
-    
+
 //     const data = await response.json()
 //     console.log(data[1].population);
 
@@ -104,15 +102,182 @@
 
 // //getCountryData('portugal', `https://countries-api-836d.onrender.com/countries/name/portugal`)
 
+// var me = "gagan";
+// let job = "teacher"
 
-var me = "gagan";
-let job = "teacher"
+// if(!numProducts) deleteShoppingCart();
 
-if(!numProducts) deleteShoppingCart();
+// var numProducts = 10
 
-var numProducts = 10
+// function deleteShoppingCart() {
+//   console.log('All products are deleted');
+// }
 
-function deleteShoppingCart() {
-  console.log('All products are deleted');
+'use strict';
+
+// Data needed for a later exercise
+const flights =
+  '_Delayed_Departure;fao93766109;txl2133758440;11:25+_Arrival;bru0943384722;fao93766109;11:45+_Delayed_Arrival;hel7439299980;fao93766109;12:05+_Departure;fao93766109;lis2323639855;12:30';
+
+const italianFoods = new Set([
+  'pasta',
+  'gnocchi',
+  'tomatoes',
+  'olive oil',
+  'garlic',
+  'basil',
+]);
+
+const mexicanFoods = new Set([
+  'tortillas',
+  'beans',
+  'rice',
+  'tomatoes',
+  'avocado',
+  'garlic',
+]);
+
+const commonFoods = italianFoods.intersection(mexicanFoods);
+console.log(commonFoods);
+
+// Data needed for first part of the section
+const restaurant = {
+  name: 'Classico Italiano',
+  location: 'Via Angelo Tavanti 23, Firenze, Italy',
+  categories: ['Italian', 'Pizzeria', 'Vegetarian', 'Organic'],
+  starterMenu: ['Focaccia', 'Bruschetta', 'Garlic Bread', 'Caprese Salad'],
+  mainMenu: ['Pizza', 'Pasta', 'Risotto'],
+
+  openingHours: {
+    thu: {
+      open: 12,
+      close: 22,
+    },
+    fri: {
+      open: 11,
+      close: 23,
+    },
+    sat: {
+      open: 0, // Open 24 hours
+      close: 24,
+    },
+  },
+
+  order: function (starterIndex, mainIndex) {
+    return [this.starterMenu[starterIndex], this.mainMenu[mainIndex]];
+  },
+
+  orderDelivery: function (obj) {
+    console.log(obj);
+  },
+
+  orderPasta: function (ing1, ing2, ing3) {
+    console.log(`Here is your ingredients ${ing1}, ${ing2}, ${ing3}`);
+  },
+
+  orderPizza: function (mainIng, ...OtherIng) {
+    console.log(mainIng, OtherIng);
+  },
+};
+
+restaurant.orderDelivery({
+  time: '22:30',
+  address: 'MapleShade',
+  mainIndex: 2,
+  starterIndex: 2,
+});
+
+// const arr = [2,3,4];
+
+// const [x,y,z] = arr;
+
+// console.log(x);
+
+// let [first, _ , third] = restaurant.categories;
+// console.log(typeof(first));
+// // const main2 = first;
+// // console.log(main2);
+//  let [first2, secondary] = [third, first];
+// console.log(first);
+
+console.log(restaurant.order(2, 0));
+
+const [starter, mainCourse] = restaurant.order(2, 0);
+console.log(starter, mainCourse);
+
+const nested = [2, 4, [5, 6]];
+const [i, _, [j, k]] = nested;
+
+console.log(i, j);
+
+// Default values
+const [p = 1, q, r = 1] = [8, 9];
+//console.log(a);
+
+const {
+  name: restaurantName,
+  openingHours: hours,
+  categories: tags,
+} = restaurant;
+console.log(tags);
+
+// Join 2 arrays
+const newMenu = [...restaurant.mainMenu, ...restaurant.starterMenu];
+console.log(newMenu);
+
+// Iterables: arrays, maps, strings, maps, sets
+
+// REST as params
+const addIngredients = function (...numbers) {
+  let sum = 0;
+  for (let i = 0; i < numbers.length; i++) sum += numbers[i];
+  console.log(sum);
+};
+
+// SPREAD as arguments
+const x = [1, 2, 3, 4, 5, 6];
+addIngredients(...x);
+
+restaurant.orderPizza('mushroom', 'onion', 'olives', 'spinach');
+
+restaurant.orderPizza('mush');
+
+const orderedSet = new Set(['Pasta', 'Pizza', 'Pizza', 'Risotto', 'Pizza']);
+
+console.log(orderedSet);
+
+console.log(new Set('Jonas'));
+
+console.log(orderedSet.size);
+console.log(orderedSet.has('Bread'));
+
+orderedSet.add('Garlic Bread');
+orderedSet.delete('Risotto');
+//orderedSet.clear();
+console.log(orderedSet);
+
+for (const order of orderedSet) {
+  console.log(order);
 }
 
+//Example
+const staff = ['Waiter', 'Chef', 'Waiter', 'Manager', 'Chef', 'Waiter'];
+
+const staffUnique = [...new Set(staff)];
+console.log(staffUnique);
+
+console.log([...new Set([...italianFoods, ...mexicanFoods])]);
+
+
+const rest = new Map();
+rest.set('name', 'Classico');
+rest.set(1, 'Italy');
+rest.set(2, 'Portugal');
+
+console.log(rest);
+
+
+const arr3 = [1,2,3,4];
+for(const key of arr3.values()){
+  console.log(key);
+}
