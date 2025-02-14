@@ -1,10 +1,13 @@
 'use strict';
 
+let x = 10;
+console.log(x);
+
 const bookings = [];
 
 const createBooking = function (flightNum, numPassengers = 1, price = 199) {
-  // numPassengers = numPassengers || 1;
-  // price = price || 199;
+  numPassengers = numPassengers || 1;
+  price = price || 199;
 
   const booking = {
     flightNum,
@@ -17,6 +20,46 @@ const createBooking = function (flightNum, numPassengers = 1, price = 199) {
 };
 
 createBooking('LH123');
+createBooking();
+console.log(typeof undefined);
+console.log(typeof null);
+
+const flight = 'LH234';
+const jonas = {
+  name: 'Jonas Schmidt',
+  passport: '29898982',
+};
+
+const checkin = passenger => {
+  passenger.name = 'Mr. ' + passenger.name;
+};
+
+checkin(jonas);
+console.log(jonas);
+
+console.log(jonas, gl);
+
+const newPassport = function (person) {
+  person.passport = Math.randon;
+};
+
+// const bookings = [];
+
+// const createBooking = function (flightNum, numPassengers = 1, price = 199) {
+//   // numPassengers = numPassengers || 1;
+//   // price = price || 199;
+
+//   const booking = {
+//     flightNum,
+//     numPassengers,
+//     price,
+//   };
+
+//   console.log(booking);
+//   bookings.push(booking);
+// };
+
+// createBooking('LH123');
 
 // // const btn = document.querySelector('.btn-country');
 // // const countriesContainer = document.querySelector('.countries');
@@ -357,7 +400,6 @@ createBooking('LH123');
 // const last = str.slice(-4);
 // console.log(last.padStart(str.length, '*'));
 
-const oneWord = function(str) {
-  return str.replace(/ /g, '').toLowerCase();
-}
-
+// const oneWord = function(str) {
+//   return str.replace(/ /g, '').toLowerCase();
+// }
