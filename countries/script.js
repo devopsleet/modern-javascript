@@ -37,11 +37,36 @@ const checkin = passenger => {
 checkin(jonas);
 console.log(jonas);
 
-console.log(jonas, gl);
+console.log(jonas);
 
 const newPassport = function (person) {
   person.passport = Math.randon;
 };
+
+console.log(typeof newPassport);
+
+const oneWord = function (str) {
+  return str.replace(/ /g, '').toLowerCase();
+};
+
+const upperWord = function (str) {
+  const [first, ...others] = str.split(' ');
+  console.log(typeof first);
+  console.log(...others);
+  return [first.toUpperCase(), ...others].join(' ');
+};
+
+console.log(upperWord('my name is Gagan'));
+console.log(oneWord('my name is Gagan'));
+
+console.log(`${'gagan'}`);
+
+const transformer = function (str, fn) {
+  console.log(` tranformed string : ${fn(str)}`);
+  console.log(` transformed by ${fn.name}`);
+};
+
+transformer('js is best', upperWord);
 
 // const bookings = [];
 
