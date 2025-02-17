@@ -122,6 +122,7 @@ book.apply(eurowings, flightData);
 
 // Bind method
 const bookEW = book.bind(eurowings);
+console.log(bookEW);
 const bookLH = book.bind(lufthansa);
 bookEW(234, 'Steven Williams');
 bookLH(235, 'Gagan');
@@ -152,6 +153,26 @@ const addTaxrate = function (rate) {
     return value + value * rate;
   };
 }; // Does not work
+
+// IIFE
+const runOnce = function () {
+  console.log('This will never run again');
+};
+
+runOnce();
+
+(() => console.log(`This is an arrow based IIFE function`))();
+
+const secureBooking = function () {
+  let passengerCount = 0;
+
+  return function () {
+    passengerCount++;
+    console.log(passengerCount);
+  };
+};
+
+const booking = secureBooking();
 
 // const bookings = [];
 
