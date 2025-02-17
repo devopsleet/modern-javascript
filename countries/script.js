@@ -68,6 +68,91 @@ const transformer = function (str, fn) {
 
 transformer('js is best', upperWord);
 
+const hight5 = function () {
+  console.log('Hi');
+};
+
+// const greet = function (greeting) {
+//   return function (name) {
+//     console.log(`${greeting} ${name}`);
+//   };
+// };
+
+const greet = greeting => {
+  return name => {
+    console.log(`${greeting} ${name}`);
+  };
+};
+
+const greeter = greet('Hey');
+greeter('gagan');
+greet('Hello')('Dave');
+
+const lufthansa = {
+  airline: 'Lufthansa',
+  iataCode: 'LH',
+  bookings: [],
+  book(flightNum, name) {
+    console.log(
+      `${name} booked a seat on ${this.airline} flight ${this.iataCode} ${flightNum}`
+    );
+    this.bookings.push({ flight: `${this.iataCode}`, name });
+  },
+};
+
+lufthansa.book(239, 'Gagan Singla');
+lufthansa.book(635, 'ABC DEF');
+console.log(lufthansa);
+
+const eurowings = {
+  airline: 'Eurowings',
+  iataCode: 'EW',
+  bookings: [],
+};
+
+const book = lufthansa.book;
+console.log(lufthansa.book);
+
+//book(23, 'Srah Williams');
+//book.call(eurowings, 23, 'Sarah');
+console.log(eurowings);
+
+const flightData = [583, 'George Cooper'];
+book.apply(eurowings, flightData);
+
+// Bind method
+const bookEW = book.bind(eurowings);
+const bookLH = book.bind(lufthansa);
+bookEW(234, 'Steven Williams');
+bookLH(235, 'Gagan');
+
+const bookEW23 = book.bind(eurowings, 23);
+bookEW23('Martha Cooper');
+
+// With Event Listeners
+lufthansa.planes = 300;
+lufthansa.buyPlane = function () {
+  console.log(this);
+  this.planes++;
+  console.log(this.planes);
+};
+
+document
+  .querySelector('.btn-country')
+  .addEventListener('click', lufthansa.buyPlane.bind(lufthansa));
+
+// Partial application
+const addTax = (rate, value) => value + value * rate;
+console.log(addTax(10, 100));
+
+const addVAT = addTax.bind(null, 0.23);
+
+const addTaxrate = function (rate) {
+  return function (value) {
+    return value + value * rate;
+  };
+}; // Does not work
+
 // const bookings = [];
 
 // const createBooking = function (flightNum, numPassengers = 1, price = 199) {
