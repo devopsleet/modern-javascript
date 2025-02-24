@@ -61,6 +61,25 @@ const inputLoanAmount = document.querySelector('.form__input--loan-amount');
 const inputCloseUsername = document.querySelector('.form__input--user');
 const inputClosePin = document.querySelector('.form__input--pin');
 
+const displayMovements = function (movements) {
+  containerMovements.innerHTML = '';
+  movements.forEach(function (mov, i, arr) {
+    const type = mov > 0 ? 'deposit' : 'withdrawal';
+    const html = `
+        <div class="movements__row">
+          <div class="movements__type movements__type--${type}">${
+      i + 1
+    } ${type}</div>
+          
+          <div class="movements__value">${mov}</div>
+        </div>`;
+
+    containerMovements.insertAdjacentHTML('afterbegin', html);
+  });
+};
+
+displayMovements(account1.movements);
+
 /////////////////////////////////////////////////
 /////////////////////////////////////////////////
 // LECTURES
@@ -106,24 +125,24 @@ console.log(letters.join(' - '));
 const newArr = [23, 11, 46];
 console.log(newArr.at(0));
 
-const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+// const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
 
-for (const movement of movements) {
-  if (movement > 0) {
-    console.log(`You deposited `);
-  }
-}
+// for (const movement of movements) {
+//   if (movement > 0) {
+//     console.log(`You deposited `);
+//   }
+// }
 
-movements.forEach(function (mov, i, arr) {
-  if (mov > 0) {
-    console.log(`You deposited ${mov}`);
-  }
-});
+// movements.forEach(function (mov, i, arr) {
+//   if (mov > 0) {
+//     console.log(`You deposited ${mov}`);
+//   }
+// });
 
-// 0: function
-for (const [key, value] of movements.entries()) {
-  console.log(`${key}: ${value}`);
-}
+// // 0: function
+// for (const [key, value] of movements.entries()) {
+//   console.log(`${key}: ${value}`);
+// }
 
 const currencies = new Map([
   ['USD', 'United States dollar'],
@@ -141,3 +160,14 @@ console.log(currenciesUnique);
 currenciesUnique.forEach(function (value, key, map) {
   console.log(`${key} : ${value}`);
 });
+
+const movements = [200, 450, -400, 3000, -650, -130, 70, 1300];
+
+const euroToUsd = 1.1;
+
+const movementsUsd = movements.map(function (mov) {
+  return mov * euroToUsd;
+});
+
+console.log(movements);
+console.log(movementsUsd);
