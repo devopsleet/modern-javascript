@@ -46,3 +46,21 @@ console.log(typeof BigInt);
 let year;
 console.log(year);
 console.log(typeof year);
+
+// const and var variables
+
+let age= 30
+age = 31;
+
+// const birthYear = 1994;
+// birthYear = 1995
+
+//empty const variables are not allowed
+//const job;
+
+var job = 'programmer';
+job = 'teacher';
+
+lastName = 'Singla';
+console.log(lastName);
+
