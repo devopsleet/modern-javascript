@@ -93,3 +93,6 @@ console.log(ageJonas > ageSarah);
 console.log(ageSarah >= 18);
 
 console.log(ageSarah < 19);
+
+let a,b = 25 - 10 - 5;
+console.log(a,b);
