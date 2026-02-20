@@ -1,56 +1,28 @@
-const feelInMile = 5280;
+let js = "amazing";
+console.log(40 + 8 + 23);
 
-function example() {
-  console.log(a);
-  var a = 10;
-}
+console.log("Jonas");
+console.log(23);
 
-example();
+let firstName = "Jonas";
+console.log(firstName);
 
-// use of const with arrays
-// const allows to mutate the arrays or objects
-let arr = [1, 2, 3];
-console.log(`Array before push ${arr}`);
-arr.push(5);
-console.log(`Array after push ${arr}`);
+let $name = "Gagan";
+let _lastname = "Singla";
+console.log(_lastname);
+console.log($name);
 
-let age = 64;
-console.log(age++);
-console.log(++age);
-let isActivegame = true;
-let isLoggedIn = false;
-let isGameOver = 1;
+let new = 27;
 
-let $age = 9;
+let name = "Jonas";
 
-// Strings
+let Person = "John";
+console.log(Person);
 
-let username = "Gagan";
-let password = "12123233";
+let PI = 3.1415;
 
-console.log(' I told her to "go away');
+console.log(PI);
 
-let animal = "Dumbo octopus";
+let myFirstJob = "Programmer";
+let myCurrentJob = 'teacher';
 
-console.log(animal[0]);
-
-// returns undefined
-console.log(animal[99]);
-
-let str = "Hello";
-str = -"";
-
-console.log(str);
-
-// string methods
-
-str = "abc";
-console.log(str.charAt(2));
-
-arr = [1, 2];
-
-console.log(arr[4]);
-
-str = "Hello";
-console.log(str.slice(-2));
-console.log(str.substring(-2));
