@@ -64,35 +64,62 @@
 // lastName = 'Singla';
 // console.log(lastName);
 
-const now = 2037;
-const ageJonas = now - 1991;
-const ageSarah = now - 2018;
-console.log(ageJonas, ageSarah);
+
+// console.log(jonas);
+
+// console.log();
+
+// let text1 = "John";
+// let text2 = "Doe";
+// let text3 = text1 + " " + text2
+// console.log(text3);
+
+// // let x = 5 + 5;
+// // let y = "5" + 5;
+// // let z = "Hello" + 5;
+// // let a = "10" * "3";
+// // console.log(x,y,z,a);
+
+// // let x = 5;
+// // let y = 2;
+// // let z = x/y;
+// // console.log(z);
+
+// let x = 5;
+// let y = 2;
+// y = x++;
+// //x++;
+// console.log(x);
+// y = y + x;
+// console.log(y);
+
+// console.log(`just a regular string...`);
+
+// console.log(`This is
+// splitted
+// across
+// several lines`);
+
+const age = 15;
+const isOldEnough = age > 18
+
+if (isOldEnough) {
+    console.log('Sarah can start driving license 🚗');
+
+} else {
+    const yearsLeft = 18 - age;
+    console.log(`Sarah is too young wait for ${yearsLeft} years`);
+}
 
 
-console.log(ageJonas * 2, ageJonas /2, 2 ** 3);
+let century ;
+const birthYear = 1991;
+if(birthYear <= 2000) {
+    century = 20;
+} else {
+    century = 21;
+}
 
-const firstName = "Jonas";
-const lastName = "Singh";
+console.log(century);
 
-console.log(firstName + " " + lastName);
-
-//assignment
-
-let x = 10 + 5;
- x += 10;
- x *= 4;
- x++
-
- x = 1 + x++
-console.log(x);
-
-
-//Comparison
-console.log(ageJonas > ageSarah);
-console.log(ageSarah >= 18);
-
-console.log(ageSarah < 19);
-
-let a,b = 25 - 10 - 5;
-console.log(a,b);
+console.log(`If the condition is true the condition will be executed!!! else it wont work`);
