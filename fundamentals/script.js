@@ -122,74 +122,102 @@
 
 // console.log(century);
 
-const inputYear = '1991';
-console.log(Number(inputYear) + 18);
+// const inputYear = '1991';
+// console.log(Number(inputYear) + 18);
 
 
-console.log(inputYear);
+// console.log(inputYear);
 
-console.log(Number('Gagan'));
-console.log(typeof NaN);
+// console.log(Number('Gagan'));
+// console.log(typeof NaN);
 
-console.log(String(23));
+// console.log(String(23));
 
-// type coercion
-console.log('I am ' + 23 + ' years old');
-console.log('23' - '10' - '3');
+// // type coercion
+// console.log('I am ' + 23 + ' years old');
+// console.log('23' - '10' - '3');
 
-console.log('23' * '2');
-console.log('Hello' * 2);
+// console.log('23' * '2');
+// console.log('Hello' * 2);
 
-let n = '1' + 1;
-n = n - 1;
-console.log(n);
+// let n = '1' + 1;
+// n = n - 1;
+// console.log(n);
 
-console.log(n+1);
+// console.log(n+1);
 
-console.log("gagan " - '2');
-
-
-// 5 falsy values
-// 0, '', undefined, NaN, null and also false
+// console.log("gagan " - '2');
 
 
-console.log(Boolean(0));
-console.log(Boolean(undefined));
-console.log(Boolean('Jonas'));
-console.log(Boolean({}));
-console.log(Boolean([]));
-console.log(Boolean(''));
+// // 5 falsy values
+// // 0, '', undefined, NaN, null and also false
 
 
-const money = 0;
+// console.log(Boolean(0));
+// console.log(Boolean(undefined));
+// console.log(Boolean('Jonas'));
+// console.log(Boolean({}));
+// console.log(Boolean([]));
+// console.log(Boolean(''));
 
-if (money) {
-    console.log("Don't spend it at all");
-} else {
-    console.log('You should get a Job!');
+
+// const money = 0;
+
+// if (money) {
+//     console.log("Don't spend it at all");
+// } else {
+//     console.log('You should get a Job!');
+// }
+
+// let height;
+
+// if (height) {
+//     console.log('Defined');
+// }
+
+// const age = 18;
+
+// // strict equality operator.
+// // Does not perform type coercion
+// if (age === 18) console.log('You just became an adult');
+// else console.log('Nope');
+
+// // loose equality operator
+// // does type coercion
+// console.log(18 == '18');
+// console.log(18 === '18');
+
+// const fav = prompt("Whats your fav number?")
+// console.log(fav);
+
+// age = 16;
+
+const hasDriverLicence = true;
+const hasGoodVision = true;
+
+console.log(hasDriverLicence && hasGoodVision);
+
+const day = 'monday';
+
+switch(day) {
+    case 'monday':
+        console.log('Plan my course structure');
+        console.log('Go to coding meetup');
+        break;
+    case 'tuesday':
+        console.log('Prepare theory videos');
+        break;
+    case 'wednesday':
+    case 'thursday':
+        console.log('Write code examples');
+        break;
+    case 'friday':
+        console.log('Record videos');
+        break;
+    case 'saturday':
+        console.log('Enjoy the weekend');
+        break;
+    default:
+        console.log('Not a valid day!');
+        
 }
-
-let height;
-
-if (height) {
-    console.log('Defined');
-}
-
-const age = 18;
-
-// strict equality operator.
-// Does not perform type coercion
-if (age === 18) console.log('You just became an adult');
-else console.log('Nope');
-
-// loose equality operator
-// does type coercion
-console.log(18 == '18');
-console.log(18 === '18');
-
-const fav = prompt("Whats your fav number?")
-console.log(fav);
-
-age = 16;
-
-
